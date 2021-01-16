@@ -1,9 +1,10 @@
----
+<!-- <---
 layout: page
 title: "About"
 description: "为了让更多中国人能融入国际语运动而作"
 header-img: "img/post-bg-rwd.jpg"
----
+--->
+-->
 
 <!-- Language Selector -->
 <!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">

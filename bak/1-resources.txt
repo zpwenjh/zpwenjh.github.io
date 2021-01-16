@@ -1,9 +1,10 @@
----
+<!-- <---
 layout: page
 title: "Resources"
 description: "学习格罗比言真的超级简单"
 header-img: "img/post-bg-rwd.jpg"
----
+--->
+-->
 
 <!-- Language Selector -->
 <!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
