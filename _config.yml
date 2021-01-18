@@ -99,10 +99,10 @@ service-worker: true
 # 友情链接，请尽量不要删除
 friends: [
     {
-        title: "zpwenjh github",
+        title: "github",
         href: "https://zpwenjh.github.io"
     },{
         title: "CSDN",
-        href: "https://https://blog.csdn.net/HIVAN1"
+        href: "https://blog.csdn.net/HIVAN1"
     }
 ]
