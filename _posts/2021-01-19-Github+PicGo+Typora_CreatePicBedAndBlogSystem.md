@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      搭建图床及博客系统
-subtitle:   Github+PicGo+Typora图床及博客系统
+title:      如何使用Github搭建图床及博客系统？
+subtitle:   Github+PicGo+Typora，你值得拥有
 date:       2021-01-19
 author:     wenjh
 header-img: img/post-bg-os-metro.jpg
@@ -10,7 +10,7 @@ tags:
     - 图床及博客系统
 ---
 
-# # 新建仓库
+# 新建仓库
 
 在github上新建仓库，这一步没有什么难度，注意需要创建公开仓库，如果是私有仓库，那么别人都没法看到你的图了。
 
@@ -63,3 +63,6 @@ PicGo是一个开源软件，直接从Github下载对应操作系统下的安装
 [在Github搭建免费个人博客提高篇](https://zhuanlan.zhihu.com/p/111832962)
 
 [在Github搭建免费个人博客进阶篇](https://zhuanlan.zhihu.com/p/111846728)
+
+---
+
