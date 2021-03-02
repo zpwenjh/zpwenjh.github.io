@@ -22,7 +22,7 @@ tags:
 
 * 选择```Settings - Develop settings - Personal access tokens```进入如下页面。
 
-  ![image-20210119113945437](https://zpwenjh.github.io/img/image-20210119113945437.png)
+  ![image-20210119113945437](https://zpwenjh.github.io/img-post/image-20210119113945437.png)
 
 * 点击```Generate new token```，勾选```repo```，然后点击```Generate token```，会生成一个token，这个token只显示一次，记得保存。
 
@@ -32,7 +32,7 @@ PicGo是一个开源软件，直接从Github下载对应操作系统下的安装
 
 * 进行如下设置。
 
-  ![image-20210119151815517](https://zpwenjh.github.io/img/image-20210119151815517.png)
+  ![image-20210119151815517](https://zpwenjh.github.io/img-post/image-20210119151815517.png)
 
   ```Token```即为上面生成的Token。
 
@@ -40,7 +40,7 @@ PicGo是一个开源软件，直接从Github下载对应操作系统下的安装
 
 * 接下来打开```PicGo设置 - 设置Server```，按如下进行配置。
 
-  ![image-20210119152509048](https://zpwenjh.github.io/img/image-20210119152509048.png)
+  ![image-20210119152509048](https://zpwenjh.github.io/img-post/image-20210119152509048.png)
 
 # 配置Typora
 
@@ -48,7 +48,7 @@ PicGo是一个开源软件，直接从Github下载对应操作系统下的安装
 
 * 打开Typora，选择```文件 - 偏好设置 - 图像```，进行如下设置
 
-  ![image-20210119152639450](https://zpwenjh.github.io/img/image-20210119152639450.png)
+  ![image-20210119152639450](https://zpwenjh.github.io/img-post/image-20210119152639450.png)
 
 * 点击```验证图片上传选项```，如果```success```返回为```true```，则上传成功，github仓库中可以看到两个Typora的图标。
 
