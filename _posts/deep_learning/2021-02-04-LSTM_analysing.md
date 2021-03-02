@@ -4,8 +4,8 @@ title:      LSTM原理
 subtitle:   全面解析LSTM及其前向传播计算过程
 date:       2021-01-19
 author:     wenjh
-header-img: img/post-bg-deeplearning-lstm.jpg
-catalog:    false
+header-img: img/post-bg-deeplearning-lstm.png
+catalog:    true
 tags:
     - 深度学习
 ---
@@ -16,7 +16,7 @@ tags:
 
 # LSTM原理
 
-先上原理图
+先上原理图：
 
 ![image-20210302114321174](https://zpwenjh.github.io/img-post/image-20210302114321174.png)
 
@@ -30,7 +30,7 @@ tags:
 
 ### 计算公式及解释
 
-遗忘门计算公式如下
+遗忘门计算公式如下：
 
 $$f_t = \sigma(W_f\cdot[h_{t-1}, x_t] + b_f)$$
 
