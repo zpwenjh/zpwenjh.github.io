@@ -5,7 +5,7 @@ subtitle:   全面解析LSTM及其前向传播计算过程
 date:       2021-01-19
 author:     wenjh
 header-img: img/post-bg-deeplearning-lstm.jpg
-catalog:    false
+catalog:    true
 tags:
     - 深度学习
 ---
