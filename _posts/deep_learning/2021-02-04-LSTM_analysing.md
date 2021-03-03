@@ -2,9 +2,9 @@
 layout:     post
 title:      LSTM原理
 subtitle:   全面解析LSTM及其前向传播计算过程
-date:       2021-01-19
+date:       2021-02-04
 author:     wenjh
-header-img: img/post-bg-deeplearning-lstm.png
+header-img: img/post-bg-deeplearning-lstm.jpg
 catalog:    true
 tags:
     - 深度学习
