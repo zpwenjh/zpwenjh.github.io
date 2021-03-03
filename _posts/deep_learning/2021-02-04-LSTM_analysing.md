@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      LSTM原理
-subtitle:   全面解析LSTM及其前向传播计算过程
+title:      LSTM(RNN,GRU)原理
+subtitle:   全面解析LSTM(RNN,GRU)及其前向传播计算过程
 date:       2021-02-04
 author:     wenjh
 header-img: img/post-bg-deeplearning-lstm.jpg
@@ -91,9 +91,21 @@ $$h_t=o_t*\tanh(C_t)$$
 
 ![20180713200802779](https://zpwenjh.github.io/img-post/20180713200802779.png)
 
+# # GRU
+
+GRU是LSTM最流行的一个变体，其结构如下：
+
+![5480235-68c6da22ebd29964](https://zpwenjh.github.io/img-post/5480235-68c6da22ebd29964.png)
+
+GRU取消了LSTM中的cell state，只使用了hidden state，并且使用update gate更新门来替换LSTM中的输入们和遗忘门，取消了LSTM中的输出门，新增了reset gate重置门，图中的$z_t$和$r_t$分别表示更新门和重置门。更新门用于控制前一时刻的状态信息被带入到当前状态中的程度，更新门的值越大说明前一时刻的状态信息带入越多。重置门控制前一状态有多少信息被写入到当前的候选集 $\tilde{h_t}$上，重置门越小，前一状态的信息被写入的越少。这样做的好处是在达到LSTM相近的效果下，GRU参数更少，训练的计算开销更小，训练速度更快。
+
 # 后记
 
-LSTM和RNN一样，根据使用场景不同，LSTM可能有单输入多输出，多输入单输出，多输入多输出等输入输出结构。下图是一些RNN的实际使用场景结构。
+标准RNN结构如下：
+
+![quesbase64155693985278218659](https://zpwenjh.github.io/img-post/quesbase64155693985278218659.png)
+
+该结构和LSTM对比起来非常好理解。但是实际使用场景中，有根据问题域不同，也有不同的使用结构。下图是一些RNN的实际使用场景下的结构。
 
 ![RNN-muli-oneo](https://zpwenjh.github.io/img-post/RNN-muli-oneo.jpg)
 
@@ -102,4 +114,6 @@ LSTM和RNN一样，根据使用场景不同，LSTM可能有单输入多输出，
 将上面两图结合就是Encoder-Decoder模型，也可以称之为Seq2Seq模型。
 
 ![2021-03-02-RNN-seq2seq](https://zpwenjh.github.io/img-post/2021-03-02-RNN-seq2seq.jpg)
+
+LSTM和RNN一样，根据使用场景不同，LSTM可能有单输入多输出，多输入单输出，多输入多输出等输入输出结构。
 
