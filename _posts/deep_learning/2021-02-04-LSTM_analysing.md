@@ -5,7 +5,7 @@ subtitle:   全面解析LSTM(RNN,GRU)及其前向传播计算过程
 date:       2021-02-04
 author:     wenjh
 header-img: img/post-bg-deeplearning-lstm.jpg
-catalog:    true
+catalog:    false
 tags:
     - 深度学习
 ---
@@ -91,7 +91,17 @@ $$h_t=o_t*\tanh(C_t)$$
 
 ![20180713200802779](https://zpwenjh.github.io/img-post/20180713200802779.png)
 
-# # GRU
+# 多层LSTM
+
+![20200218164924456](https://zpwenjh.github.io/img-post/20200218164924456.png)
+
+# LSTM变体
+
+![image-20210308091259528](https://zpwenjh.github.io/img-post/image-20210308091259528.png)
+
+![image-20210308091316540](https://zpwenjh.github.io/img-post/image-20210308091316540.png)
+
+## GRU
 
 GRU是LSTM最流行的一个变体，其结构如下：
 
@@ -117,3 +127,12 @@ GRU取消了LSTM中的cell state，只使用了hidden state，并且使用update
 
 LSTM和RNN一样，根据使用场景不同，LSTM可能有单输入多输出，多输入单输出，多输入多输出等输入输出结构。
 
+# 参考资料
+
+[Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+[长短期记忆网络（Long Short-Term Memory，LSTM）及其变体双向LSTM和GRU](https://blog.csdn.net/weixin_42111770/article/details/80900575)
+
+[LSTM输入输出理解](https://blog.csdn.net/lsjmax/article/details/104376616)
+
+[如何从RNN起步，一步一步通俗理解LSTM](https://blog.csdn.net/v_july_v/article/details/89894058)
