@@ -4,7 +4,7 @@ title:      Vim配置
 subtitle:   自用Vim配置，需者自取
 date:       2021-03-24
 author:     wenjh
-header-img: img/post-bg-debug.jpg
+header-img: img/post-bg-debug.png
 catalog:    false
 tags:
     - 编辑工具
