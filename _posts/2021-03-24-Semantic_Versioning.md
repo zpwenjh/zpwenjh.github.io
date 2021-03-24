@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      语义化版本？
+title:      语义化版本
 subtitle:   语义化版本 2.0.0
 date:       2021-03-24
 author:     wenjh

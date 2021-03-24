@@ -7,7 +7,7 @@ author:     wenjh
 header-img: img/post-bg-os-metro.jpg
 catalog:    false
 tags:
-    - 图床及博客系统
+    - 版本管理工具
 ---
 
 # 新建仓库
