@@ -142,26 +142,25 @@ $$
 * 误差的衡量：本文选取$MSE$(均方误差)来衡量网络误差：
 
 $$
-\begin{align}
+\begin{align*}\label{1}
 & E_{O_1} = \frac{1}{2}(O_1-D_1)^2 \tag{1}\\
 & E_{O_2} = \frac{1}{2}(O_2-D_2)^2 \tag{2}\\
 & E_O = E_{O_1}+E_{O_2} \tag{3}
-\end{align}
+\end{align*}
 $$
 
 * 误差的反向传播：误差的反向传播遵循按权重分配原则，因此，$E_{O_1},E_{O_2}$误差全部分别由$R_1, R_2$产生，即$E_{O_1}$也是神经元$F$的误差。各神经元的误差计算如下：
 
 $$
-\begin{align}
+\begin{aligned}
 E_{Y_1} & = \frac{W_{Y_11}}{W_{Y_11}+W_{Y_21}+W_{Y_31}}E_{O_1}+\frac{W_{Y_12}}{W_{Y_12}+W_{Y_22}+W_{Y_32}}E_{O_2} \\
 E_{Y_2} & = \frac{W_{Y_21}}{W_{Y_11}+W_{Y_21}+W_{Y_31}}E_{O_1}+\frac{W_{Y_22}}{W_{Y_12}+W_{Y_22}+W_{Y_32}}E_{O_2} \\
 E_{Y_3} & = \frac{W_{Y_31}}{W_{Y_11}+W_{Y_21}+W_{Y_31}}E_{O_1}+\frac{W_{Y_32}}{W_{Y_12}+W_{Y_22}+W_{Y_32}}E_{O_2}
-  \end{align}
+\end{aligned}
 $$
 
   $E_{X_1}$和$E_{X_2}$的计算和上述方法相同，这里不再赘述。
   上述计算过程用矩阵表示为：
-
 $$
 \left (
 \begin{matrix}
@@ -220,7 +219,7 @@ $$
   由前向传播的计算式和上面的误差计算式$(1), (2), (3)$可得：
 
 $$
-\begin{align}
+\begin{align*}\label{2}
 & \frac{\partial E_O}{\partial O_1} = E_{O_1}^{'} = 2 * \frac{1}{2}(O_1-D_1)^{2-1}*1 = O_1 - D_1 \\
 & \frac{\partial E_O}{\partial R_1} = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) \\
 & \frac{\partial E_O}{\partial W_{Y_11}} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial W_{Y_11}} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*Y_1 \tag{4}\\
@@ -229,7 +228,7 @@ $$
 & = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11}*sigmoid(H_1)*(1-sigmoid(H_1))*X_1 \tag{5} \\
 & \frac{\partial E_O}{\partial X_1} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1}*\frac{\partial Y_1}{\partial H_1}*\frac{\partial H_1}{\partial X_1} \\
 & = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11}*sigmoid(H_1)*(1-sigmoid(H_1))*W_{X_11}
-\end{align}
+\end{align*}
 $$
 
   依次类推，可以计算$E_O$对所有权重$W$的偏导。
@@ -239,13 +238,13 @@ $$
   从链式求导过程可以看到，求导过程中，大量计算是重复的，因此，在更新$W_{Y_11}$和$W_{X_11}$的过程中，可以将重复计算进行折叠，只计算一次，简化后如下：
 
 $$
-\begin{align}
+\begin{aligned}
 & \nabla{_{O_1}E_O} = \frac{\partial E_O}{\partial O_1} = O_1 - D_1 \\
 & \sigma{'(R_1)} = \frac{\partial O_1}{\partial R_1} = sigmoid(R_1)*(1-sigmoid(R_1)) \\
 & \delta{_{F_{1}}} = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}\\
 & \frac{\partial E_O}{\partial W_{Y_11}} = \delta{_{F_{1}}} * Y_1 = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}*Y_1\\
 & \frac{\partial E_O}{\partial W_{X_11}} = ((W_{Y_11})^T\delta{_{F_{1}}})\odot \sigma{'(H_1)}*X_1
-\end{align}
+\end{aligned}
 $$
 
   其中$\sigma{'}$是当前神经元的输出对输入的偏导(梯度)。按照上述过程，可以逐层计算出误差对各个权重$W$的偏导。
@@ -253,9 +252,9 @@ $$
   权重更新首先需要选择一个更新算法，这里简单使用随机梯度下降法(SGD)。将上述偏导代入SGD得到：
 
 $$
-\begin{align}
+\begin{aligned}
 & W_{Y_11} = W_{Y_11} - \eta \frac{\partial E_O}{\partial W_{Y_11}} = W_{Y_11} - \eta \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}*Y_1\\
 & W_{X_11} = W_{X_11} - \eta \frac{\partial E_O}{\partial W_{X_11}} = W_{X_11} - \eta ((W_{Y_11})^T\delta{_{F_{1}}})\odot \sigma{'(H_1)}*X_1
-\end{align}
+\end{aligned}
 $$
 
