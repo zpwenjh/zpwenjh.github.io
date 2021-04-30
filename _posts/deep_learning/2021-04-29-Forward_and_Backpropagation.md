@@ -142,7 +142,7 @@ $$
 * 误差的衡量：本文选取$MSE$(均方误差)来衡量网络误差：
 
 $$
-\begin{align*}\label{1}
+\begin{align*}
 & E_{O_1} = \frac{1}{2}(O_1-D_1)^2 \tag{1}\\
 & E_{O_2} = \frac{1}{2}(O_2-D_2)^2 \tag{2}\\
 & E_O = E_{O_1}+E_{O_2} \tag{3}
@@ -220,7 +220,7 @@ $$
   由前向传播的计算式和上面的误差计算式$(1), (2), (3)$可得：
 
 $$
-\begin{align*}\label{2}
+\begin{align*}
 & \frac{\partial E_O}{\partial O_1} = E_{O_1}^{'} = 2 * \frac{1}{2}(O_1-D_1)^{2-1}*1 = O_1 - D_1 \\
 & \frac{\partial E_O}{\partial R_1} = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) \\
 & \frac{\partial E_O}{\partial W_{Y_11}} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial W_{Y_11}} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*Y_1 \tag{4}\\
