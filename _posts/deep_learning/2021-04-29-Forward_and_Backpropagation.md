@@ -161,7 +161,6 @@ $$
 
   $E_{X_1}$和$E_{X_2}$的计算和上述方法相同，这里不再赘述。
   上述计算过程用矩阵表示为：
-
 $$
 \left (
 \begin{matrix}
@@ -259,3 +258,6 @@ $$
 \end{aligned}
 $$
 
+# 参考
+[\[1\] 张小磊啊.《一文搞懂反向传播算法》\[DB/OL\].](https://www.jianshu.com/p/964345dddb70)
+[\[2\] aift.《“反向传播算法”过程及公式推导（超直观好懂的Backpropagation）》\[DB/OL\]](https://blog.csdn.net/ft_sunshine/article/details/90221691)
