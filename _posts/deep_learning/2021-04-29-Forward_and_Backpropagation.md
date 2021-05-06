@@ -249,15 +249,15 @@ $$
 
 $$
 \begin{aligned}
-& \nabla{_{O_1}E_O} = \frac{\partial E_O}{\partial O_1} = O_1 - D_1 \\
+& \nabla{_{O_1}E_O} && = \frac{\partial E_O}{\partial O_1} = O_1 - D_1 \\
 \\
-& \sigma{'(R_1)} = \frac{\partial O_1}{\partial R_1} = sigmoid(R_1)*(1-sigmoid(R_1)) \\
+& \sigma{'(R_1)} && = \frac{\partial O_1}{\partial R_1} = sigmoid(R_1)*(1-sigmoid(R_1)) \\
 \\
-& \delta{_{F_{1}}} = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}\\
+& \delta{_{F_{1}}} && = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}\\
 \\
-& \frac{\partial E_O}{\partial W_{Y_11}} = \delta{_{F_{1}}} * Y_1 = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}*Y_1\\
+& \frac{\partial E_O}{\partial W_{Y_11}} && = \delta{_{F_{1}}} * Y_1 = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}*Y_1\\
 \\
-& \frac{\partial E_O}{\partial W_{X_11}} = ((W_{Y_11})^T\delta{_{F_{1}}})\odot \sigma{'(H_1)}*X_1
+& \frac{\partial E_O}{\partial W_{X_11}} && = ((W_{Y_11})^T\delta{_{F_{1}}})\odot \sigma{'(H_1)}*X_1
 \end{aligned}
 $$
 
