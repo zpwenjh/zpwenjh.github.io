@@ -39,12 +39,16 @@ $$
 \begin{aligned}
 H_1 & = W_{X_11}X_1 + W_{X_21}X_2 \\
 Y_1 & = sigmoid(H_1) \\
+\\
 H_2 & = W_{X_12}X_1 + W_{X_22}X_2 \\
 Y_2 & = sigmoid(H_2) \\
+\\
 H_3 & = W_{X_13}X_1 + W_{X_23}X_2 \\
 Y_3 & = sigmoid(H_3) \\
+\\
 R_1 & = W_{Y_11}Y_1 + W_{Y_21}Y_2 + W_{Y_31}Y_3 \\
 O_1 & = sigmoid(R_1) \\
+\\
 R_2 & = W_{Y_12}Y_1 + W_{Y_22}Y_2 + W_{Y_32}Y_3 \\
 O_2 & = sigmoid(R_2) \\
 \end{aligned}
@@ -161,6 +165,7 @@ $$
 
   $E_{X_1}$和$E_{X_2}$的计算和上述方法相同，这里不再赘述。
   上述计算过程用矩阵表示为：
+
 $$
 \left (
 \begin{matrix}
@@ -220,14 +225,19 @@ $$
 
 $$
 \begin{align*}
-& \frac{\partial E_O}{\partial O_1} = E_{O_1}^{'} = 2 * \frac{1}{2}(O_1-D_1)^{2-1}*1 = O_1 - D_1 \\
-& \frac{\partial E_O}{\partial R_1} = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) \\
-& \frac{\partial E_O}{\partial W_{Y_11}} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial W_{Y_11}} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*Y_1 \tag{4}\\
-& \frac{\partial E_O}{\partial Y_1} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11} \\
-& \frac{\partial E_O}{\partial W_{X_11}} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1}*\frac{\partial Y_1}{\partial H_1}*\frac{\partial H_1}{\partial W_{X_11}} \\
-& = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11}*sigmoid(H_1)*(1-sigmoid(H_1))*X_1 \tag{5} \\
-& \frac{\partial E_O}{\partial X_1} = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1}*\frac{\partial Y_1}{\partial H_1}*\frac{\partial H_1}{\partial X_1} \\
-& = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11}*sigmoid(H_1)*(1-sigmoid(H_1))*W_{X_11}
+& \frac{\partial E_O}{\partial O_1} && = E_{O_1}^{'} = 2 * \frac{1}{2}(O_1-D_1)^{2-1}*1 = O_1 - D_1 \\
+\\
+& \frac{\partial E_O}{\partial R_1} && = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) \\
+\\
+& \frac{\partial E_O}{\partial W_{Y_11}} && = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial W_{Y_11}} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*Y_1 \tag{4}\\
+\\
+& \frac{\partial E_O}{\partial Y_1} && = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11} \\
+\\
+& \frac{\partial E_O}{\partial W_{X_11}} && = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1}*\frac{\partial Y_1}{\partial H_1}*\frac{\partial H_1}{\partial W_{X_11}} \\
+& &&= (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11}*sigmoid(H_1)*(1-sigmoid(H_1))*X_1 \tag{5} \\
+\\
+& \frac{\partial E_O}{\partial X_1} && = \frac{\partial E_O}{\partial O_1}*\frac{\partial O_1}{\partial R_1}*\frac{\partial R_1}{\partial Y_1}*\frac{\partial Y_1}{\partial H_1}*\frac{\partial H_1}{\partial X_1} \\
+& && = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1))*W_{Y_11}*sigmoid(H_1)*(1-sigmoid(H_1))*W_{X_11}
 \end{align*}
 $$
 
@@ -240,9 +250,13 @@ $$
 $$
 \begin{aligned}
 & \nabla{_{O_1}E_O} = \frac{\partial E_O}{\partial O_1} = O_1 - D_1 \\
+\\
 & \sigma{'(R_1)} = \frac{\partial O_1}{\partial R_1} = sigmoid(R_1)*(1-sigmoid(R_1)) \\
+\\
 & \delta{_{F_{1}}} = \frac{\partial E_O}{\partial O_1} * \frac{\partial O_1}{\partial R_1} = (O_1 - D_1) * sigmoid(R_1)*(1-sigmoid(R_1)) = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}\\
+\\
 & \frac{\partial E_O}{\partial W_{Y_11}} = \delta{_{F_{1}}} * Y_1 = \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}*Y_1\\
+\\
 & \frac{\partial E_O}{\partial W_{X_11}} = ((W_{Y_11})^T\delta{_{F_{1}}})\odot \sigma{'(H_1)}*X_1
 \end{aligned}
 $$
@@ -254,6 +268,7 @@ $$
 $$
 \begin{aligned}
 & W_{Y_11} = W_{Y_11} - \eta \frac{\partial E_O}{\partial W_{Y_11}} = W_{Y_11} - \eta \nabla{_{O_1}E_O}\odot \sigma{'(R_1)}*Y_1\\
+\\
 & W_{X_11} = W_{X_11} - \eta \frac{\partial E_O}{\partial W_{X_11}} = W_{X_11} - \eta ((W_{Y_11})^T\delta{_{F_{1}}})\odot \sigma{'(H_1)}*X_1
 \end{aligned}
 $$
