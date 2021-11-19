@@ -97,6 +97,8 @@ set mouse=a
 set background=dark
 " 设置主题，非自带，需要另外下载
 :colorscheme molokai
+" 自动缩进
+filetype plugin indent on
 ```
 
 ## 重配主题

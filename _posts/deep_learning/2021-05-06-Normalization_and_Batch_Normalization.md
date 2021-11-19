@@ -9,3 +9,13 @@ catalog:    false
 tags:
     - 深度学习
 ---
+
+
+
+# 参考
+
+[\[1\] gwpscut.《Normalization》\[DB/OL\].](https://blog.csdn.net/gwplovekimi/article/details/84647354)
+
+[\[2\] 日拱一卒.《Batch Normalization详解》\[DB/OL\].](https://www.cnblogs.com/shine-lee/p/11989612.html)
+
+[\[3\]  kratzert.《Understanding the backward pass through Batch Normalization Layer》\[DB/OL\]](https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html)

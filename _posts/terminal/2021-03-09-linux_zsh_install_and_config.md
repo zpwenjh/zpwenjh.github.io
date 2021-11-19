@@ -80,7 +80,7 @@ if ! command_exists zsh; then
 最后运行./install.sh脚本，完成oh-my-zsh配置。
 # 配置oh-my-zsh
 我想要的主题是powerlevel10k，这是一个第三方主题，因此，需要下载，然后上传到服务器的~/.oh-my-zsh/customs/custom/thems/目录下。
-在本地下载好zsh-syntax-highlighting和zsh-autosuggestions插件。上传到服务器的`~/.oh-my-zsh/plugins`目录下，然后修改`~/.zshrc`，在plugins栏目下加入相关插件，修改`ZSH_THEME`为想要的主题：
+在本地下载好zsh-syntax-highlighting和zsh-autosuggestions插件。上传到服务器的`~/.oh-my-zsh/custom/plugins`目录下，然后修改`~/.zshrc`，在plugins栏目下加入相关插件，修改`ZSH_THEME`为想要的主题：
 
 ```bash
 # Set name of the theme to load --- if set to "random", it will
@@ -105,6 +105,7 @@ plugins=(
 首先确保本地和服务器终端至少有一个允许设置字体。若两个都允许，下面的操作可以同时在本地和服务器端做。
 在配置powerlevel10k之前，先确认终端字体是否符合：
 先验证终端是否支持truecolor:
+
 ```bash
 print -P '%F{#ff0000}red%f'
 ```
@@ -132,3 +133,4 @@ locale -a
 
 根据对应操作系统安装字体。
 最后给终端设置字体，我的服务器端终端不支持设置字体，本地终端用的windows terminal，因此只设置本地终端字体，然后通过本地终端连接服务器即可显示特殊字符。
+
